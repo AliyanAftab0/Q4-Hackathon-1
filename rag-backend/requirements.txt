@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+google-generativeai
+qdrant-client
+asyncpg
+python-dotenv
+pydantic[email]
+python-multipart
+pyyaml

@@ -1,0 +1,7 @@
+name: Summarizer Agent
+description: Summarizes complex robotics papers
+model: gemini-2.5-flash
+parameters:
+  temperature: 0.3
+system_prompt: |
+    Summarize technical robotics papers into key insights, methodology, and results.

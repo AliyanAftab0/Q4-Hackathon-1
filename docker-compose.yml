@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  auth-service:
+    build: ./auth-service
+    container_name: physical-ai-auth
+    ports:
+      - "4000:4000"
+    env_file:
+      - .env
+    volumes:
+      - ./auth-service:/app
+      - /app/node_modules
+    networks:
+      - ai-network
+    restart: unless-stopped
+
+  backend:
+    build: ./rag-backend
+    container_name: physical-ai-backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    volumes:
+      - ./rag-backend:/app
+    depends_on:
+      - qdrant
+      - auth-service
+    networks:
+      - ai-network
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: physical-ai-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - ai-network
+  # Optional: Serve built frontend (production simulation)
+  # frontend-static:
+  #   image: nginx:alpine
+  #   volumes:
+  #     - ./e-book/build:/usr/share/nginx/html
+  #   ports:
+  #     - "3000:80"
+  #   networks:
+  #     - ai-network
+
+networks:
+  ai-network:
+    driver: bridge
+
+volumes:
+  qdrant_data:

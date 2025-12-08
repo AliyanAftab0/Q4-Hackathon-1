@@ -1,0 +1,17 @@
+agent:
+  name: "ContentGenerator"
+  model: gemini-2.5-flash
+  description: " expert technical writer for robotics."
+  inputs:
+    - name: "topic"
+      description: "The chapter topic"
+    - name: "level"
+      description: "Audience level (Beginner/Expert)"
+  prompt: |
+    Write a detailed textbook chapter on {{topic}} for a {{level}} audience.
+    Include Python/ROS 2 code snippets.
+    Structure:
+    1. Introduction
+    2. Core Concepts
+    3. Implementation
+    4. Quiz
