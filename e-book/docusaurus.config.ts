@@ -14,11 +14,11 @@ const config: Config = {
     v4: true,
   },
 
-  url: 'https://your-docusaurus-site.example.com',
-  baseUrl: '/',
+  url: 'https://aliyanaftab0.github.io',
+  baseUrl: '/Q4-Hackathon-1/',
 
-  organizationName: 'panaversity',
-  projectName: 'physical-ai-agent',
+  organizationName: 'AliyanAftab0',
+  projectName: 'Q4-Hackathon-1',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
