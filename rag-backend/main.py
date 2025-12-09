@@ -22,7 +22,11 @@ app = FastAPI(title="Physical AI RAG Backend", lifespan=lifespan)
 # Add CORS Middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"], # Frontend ports
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:3001",
+        "https://aliyanaftab0.github.io"
+    ], # Frontend ports & Prod URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
