@@ -25,7 +25,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000",
         "http://localhost:3001",
-        "https://aliyanaftab0.github.io"
+        "https://aliyanaftab0.github.io",
+        "https://aliyanaftab0.github.io/Q4-Hackathon-1/"
     ], # Frontend ports & Prod URL
     allow_credentials=True,
     allow_methods=["*"],
